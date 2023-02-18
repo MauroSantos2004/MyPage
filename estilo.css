@@ -1,0 +1,314 @@
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    background: black;
+    font-family: 'Roboto';
+}
+/* Parte do rolamento da mensagem após meu nome*/
+p{
+    text-shadow: 0 0 7px rgba(255, 255, 255, 3), 0 0 3px rgba(255, 255, 255, 3);
+}
+
+.topo{
+    color: #e5e5e5;
+    font-size: 2.26rem;
+    text-transform: uppercase;
+    height: 17vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animação{
+    height: 50px;
+    overflow: hidden;
+    margin-left: 1px;
+
+}
+.animação > div > div{
+    padding: 0.25rem 0.75rem;
+    height: 2.81rem;
+    margin-bottom: 2.81rem;
+    display: inline-block;
+}
+
+.animação div:first-child{
+    animation: text-animation 8s infinite;
+}
+
+.primeiro{
+    background-color:#20a7d8 ;
+}
+
+.segundo{
+    background-color:#cd921e;
+}
+
+.terceiro{
+    background-color:#c10528 ;
+}
+
+.quarto{
+    background-color:purple ;
+}
+
+@keyframes text-animation{
+    0%{margin-top: 0;}
+    10%{margin-top: 0;}
+    20%{margin-top: -5.62rem;}
+    30%{margin-top: -5.62rem;}
+    40%{margin-top: -11.2rem;}
+    60%{margin-top: -11.2rem;}
+    70%{margin-top: -5.62rem;}
+    80%{margin-top: -5.62rem;}
+    90%{margin-top: 0;}
+    100%{margin-top: 0;}
+}
+
+/* A partir daqui começa o design de informações dá página*/
+.container {
+  display: flex;
+  width: 100vw;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+  background: black;
+}
+
+.painel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+
+.painel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.painel.active {
+  flex: 5;
+}
+
+.painel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .painel:nth-of-type(4),
+  .painel:nth-of-type(5){
+    display: none;
+  }
+}
+
+/* Fim da parte das imagens*/
+h1{
+    white-space: nowrap;
+    margin: 0 0 4px;
+    font-size: 40px;
+    color:rgb(255 255 255 / 96%);
+    text-align: center;
+}
+.edit section{padding: 30px 15%;}
+
+@media(width<=720px){
+    section{padding: 30px 10%;}
+}
+
+.banner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 10vw;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+@media (width<= 620px){
+    .banner{
+        text-align: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}
+
+.banner::bafore{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    width: 200%;
+    height: 110%;
+    rotate: -2deg;
+    background: #1B1526;
+}
+
+.banner h3{
+    font-weight: 400;
+    margin: 0;
+    color: rgb(255 255 255 / 57%);
+}
+
+@keyframes morph{
+    0%,100%{
+    border-radius: 
+        40% 60% 70% 30% /
+        40% 40% 60% 50%;
+    }
+    34% {
+    border-radius:
+        70% 30% 50% 50% /
+        30% 30% 70% 70%;
+    }
+    67%{
+    border-radius: 
+        100% 60% 60% 100%
+        100% 100% 60% 60%;
+    }
+}
+
+.banner img{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    animation: 
+        morph 3.5s linear infinite;
+}
+
+/* LInks finais*/
+:root {
+    --link-size: 64px;
+    --trans-props: all 0.3s ease;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+  }
+  
+  .wrapper {
+    width: 100%;
+    height: 20vh;
+  }
+  
+  .wrapper,
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  
+  /*** Containers and icons ***/
+  
+  .social-icon {
+    display: flex;
+  
+    position: relative;
+    overflow: hidden; /* Trim branded overlays */
+  
+    width: var(--link-size);
+    height: var(--link-size);
+    margin: 8px;
+  
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
+  
+    text-decoration: none;
+  
+    transition: var(--trans-props);
+  }
+  
+  .social-icon i {
+    margin: auto; /* Perfect centering thanks to parental flex */
+  
+    font-size: 24px;
+    color: hsl(212, 16%, 48%);
+  
+    z-index: 1; /* Make sure icons will be on top */
+  
+    transition: var(--trans-props);
+  }
+  
+  /*** Branded overlays from the bottom ***/
+  
+  .social-icon:after {
+    content: "";
+  
+    width: var(--link-size);
+    height: var(--link-size);
+  
+    position: absolute;
+  
+    transform: translate(0, var(--link-size));
+  
+    border-radius: 50%;
+    transition: var(--trans-props);
+  }
+  
+  .social-icon.twitter:after {
+    background-color: #1da1f2;
+  }
+  
+  .social-icon.github:after {
+    background-color: #24292e;
+  }
+  
+  .social-icon.instagram:after {
+    background-image: linear-gradient(
+      to bottom left,
+      #4f5bd5,
+      #962fbf,
+      #d62976,
+      #fa7e1e,
+      #feda75
+    );
+  }
+  
+  /*** Animations ***/
+  
+  .social-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+  }
+  
+  .social-icon:hover i {
+    /*  transform: scale(1.1); */
+    color: #fff;
+  }
+  
+  .social-icon:hover:after {
+    transform: translate(0) scale(1.2);
+  }
